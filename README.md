@@ -1,9 +1,2 @@
 # Prostogram
-# Prostogram
-# Prostogram
-# Prostogram
-# Prostogram
-# Prostogram
-# Prostogram
-# Prostogram
-# Prostogram
+
