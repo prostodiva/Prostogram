@@ -1,7 +1,7 @@
 CREATE TABLE users (
 id serial primary key,
 first_name varchar(50),
-last_nama varchar(50),
+last_name varchar(50),
 profile_name varchar(50),
 signup_date date,
 email varchar(50),
