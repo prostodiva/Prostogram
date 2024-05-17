@@ -1,4 +1,4 @@
-package javagram.javagram.controller;
+package javagram.javagram.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.validation.Valid;
-import javagram.javagram.User;
+import javagram.javagram.entity.User;
 
 @Controller
 public class AppController {

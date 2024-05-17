@@ -1,4 +1,4 @@
-package javagram.javagram.controller;
+package javagram.javagram.web;
 
 public class UserController {
     
