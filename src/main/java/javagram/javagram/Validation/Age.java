@@ -1,4 +1,4 @@
-package javagram.javagram.Validation;
+package javagram.javagram.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package javagram.javagram.Validation;
+package javagram.javagram.validation;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,12 @@
 package javagram.javagram.service;
+import javagram.javagram.entity.User;
 
-public class UserService {
+public interface UserService {
+
+    User getUser(int id);
+    User getUser(String username);
+    User saveUser(User user);
+
     //business logic
     //UserService, FollowerService, PostService, TaskService - for each repo, service, controller
 
@@ -9,5 +15,3 @@ public class UserService {
    //Autowired 
 
 }
-
-// colaboration maria prunk github username: mariaprang +4915777843216

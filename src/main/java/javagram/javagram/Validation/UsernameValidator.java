@@ -1,4 +1,4 @@
-package javagram.javagram.Validation;
+package javagram.javagram.validation;
 
 
 import jakarta.validation.ConstraintValidator;
