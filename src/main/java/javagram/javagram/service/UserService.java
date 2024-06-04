@@ -1,17 +1,72 @@
 package javagram.javagram.service;
-import javagram.javagram.entity.User;
+import java.util.UUID;
 
-public interface UserService {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Service;
 
-    User getUser(int id);
-    User getUser(String username);
-    User saveUser(User user);
+import javagram.javagram.exception.UserNotFoundException;
+import javagram.javagram.model.DTO.request.UserRequest;
+import javagram.javagram.model.DTO.response.UserResponse;
+import javagram.javagram.model.entity.UserEntity;
+import javagram.javagram.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+    private final UserRepository userRepository;
+    
+    public UserResponse get(UUID id) {
+        UserEntity entity = UserRepository.findById(UUID).orElseThrow(UserNotFoundException::new);
+
+        UserResponse response = new UserResponse();
+
+        response.setFirstName(entity.getFirstName());
+        response.setLastName(entity.getLastName());
+        response.setProfileName(entity.getProfileName());
+        response.setCreatedAt(entity.getCreatedAt());
+        response.setEmail(entity.getEmail());
+        response.setPassword(entity.getPassword());
+    
+        return response;
+    }
+
+
+    public UUID create(UserRequest request) {
+        UserEntity entity = new UserEntity();
+        entity.setId(UUID.randomUUID());
+        entity.setFirstName(request.getFirstName());
+        entity.setLastName(request.getLastName());
+        entity.setProfileName(request.getProfileName());
+        entity.setCreatedAt(request.getCreatedAt());
+        entity.setEmail(request.getEmail());
+        entity.setPassword(request.getPassword());
+    
+        userRepository.save(entity);
+
+        return entity.getId();
+    } 
+
+    public boolean update(UUID uuid, UserRequest userRequest) {
+        UserEntity entity = UserRepository.findById(UUID).orElseThrow(UserNotFoundException::new);
+
+        entity.setFirstName(userRequest.getFirstName());
+        entity.setLastName(userRequest.getLastName());
+        entity.setProfileName(userRequest.getProfileName());
+        entity.setCreatedAt(userRequest.getCreatedAt());
+        entity.setEmail(userRequest.getEmail());
+        entity.setPassword(userRequest.getPassword());
+
+        userRepository.save(entity);
+
+        return true;
+    }
+
+    }
 
     //business logic
-    //UserService, FollowerService, PostService, TaskService - for each repo, service, controller
-
     //create user to save user. inside - call save method from repository
     // userRepository.save(new User(email, username))
    //Autowired 
 
-}
+

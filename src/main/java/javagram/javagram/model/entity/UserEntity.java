@@ -1,6 +1,7 @@
-package javagram.javagram.entity;
+package javagram.javagram.model.entity;
 
 import java.util.Date;
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -28,12 +29,12 @@ import lombok.Setter;
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private UUID id;
       
     @NotBlank(message = "First name cannot be blank")
     @Size(min = 2, message = "First name is too short")
@@ -54,10 +55,10 @@ public class User {
     @Column(name = "profile_name", nullable = false, unique = true)
     private String profileName;
 
-    @Column(name = "signup_date")
+    @Column(name = "created_at")
     @Past(message = "Date of birth must be in the past")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date signDate;
+    private Date createdAt;
 
     @Email(message = "Invalid email")
     @NotBlank(message = "email cannot be blank")
@@ -73,13 +74,17 @@ public class User {
 
 
 
+
+
+    
+
     // @Past(message = "Date of birth must be in the past")
     // @DateTimeFormat(pattern = "yyyy-MM-dd")
     // @Age(message = "Must be at least 18 years old.")
     // private Date dateOfBirth;
 
 
-    // public User(int id, String firstName, String lastName, String profileName, Date signDate, String email, String password) { //Date dateOfBirth
+    // public User(String id, String firstName, String lastName, String profileName, Date signDate, String email, String password) { //Date dateOfBirth
     //     this.id = id;
     //     this.firstName = firstName;
     //     this.lastName = lastName;

@@ -3,7 +3,7 @@ id serial primary key,
 first_name varchar(50),
 last_name varchar(50),
 profile_name varchar(50),
-signup_date date,
+created_at date,
 email varchar(50),
 password varchar(50)
 );
@@ -18,6 +18,8 @@ post_type int references post_type (id)
 CREATE TABLE post_media (
 id serial primary key,
 post_id int references post (id),
+
+// change to S3
 media_data bytea,
 position int
 );

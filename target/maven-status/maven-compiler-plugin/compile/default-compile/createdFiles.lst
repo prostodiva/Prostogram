@@ -1,13 +1,4 @@
-javagram/javagram/Entity.class
-javagram/javagram/repository/AppRepository.class
-javagram/javagram/GenerationType.class
-javagram/javagram/GeneratedValue.class
-javagram/javagram/controller/AppController.class
-javagram/javagram/Validation/Username.class
-javagram/javagram/Validation/UsernameValidator.class
-javagram/javagram/Id.class
-javagram/javagram/User.class
-javagram/javagram/service/AppService.class
-javagram/javagram/JavagramApplication.class
-javagram/javagram/Validation/Age.class
-javagram/javagram/Validation/AgeValidator.class
+javagram/javagram/security/manager/CustomAuthemtificationManager.class
+javagram/javagram/model/entity/Follower.class
+javagram/javagram/exception/UserNotFoundException.class
+javagram/javagram/security/filter/JWTAuthorizationFilter.class

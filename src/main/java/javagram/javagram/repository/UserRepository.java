@@ -1,19 +1,15 @@
 package javagram.javagram.repository;
-import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
-import javagram.javagram.entity.User;
+import java.util.UUID;
+import javagram.javagram.model.entity.UserEntity;
 
-public interface UserRepository extends CrudRepository<User, Integer>{
+public interface UserRepository extends CrudRepository<UserEntity, UUID>{
 
-    Optional<User> findByUsername(String username);
-	// boolean existsByUsername(String username);
     
+
 } 
+
     //access to database
-    //all CRUD oparations should be her
-    //should be an interface
-    // extends CrudRepository<User, Integer>
-    
-    //прописывает только методы которых нет в CrudRepository
+    //прописываем только методы которых нет в CrudRepository
 
