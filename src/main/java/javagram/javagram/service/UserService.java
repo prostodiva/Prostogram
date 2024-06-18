@@ -1,7 +1,8 @@
 package javagram.javagram.service;
 import java.util.UUID;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javagram.javagram.exception.UserNotFoundException;
@@ -16,8 +17,8 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
     private final UserRepository userRepository;
     
-    public UserResponse get(UUID id) {
-        UserEntity entity = UserRepository.findById(UUID).orElseThrow(UserNotFoundException::new);
+    public UserResponse get(UUID uuid) {
+        UserEntity entity = userRepository.findById(uuid).orElseThrow(UserNotFoundException::new);
 
         UserResponse response = new UserResponse();
 
@@ -48,7 +49,7 @@ public class UserService {
     } 
 
     public boolean update(UUID uuid, UserRequest userRequest) {
-        UserEntity entity = UserRepository.findById(UUID).orElseThrow(UserNotFoundException::new);
+        UserEntity entity = userRepository.findById(uuid).orElseThrow(UserNotFoundException::new);
 
         entity.setFirstName(userRequest.getFirstName());
         entity.setLastName(userRequest.getLastName());

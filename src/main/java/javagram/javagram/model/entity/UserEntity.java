@@ -22,6 +22,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
 @Table(name = "users")
 
@@ -95,7 +96,7 @@ public class UserEntity {
     //   //this.dateOfBirth = dateOfBirth;
     // }
 
-    // public User() {
+    // public UserEntity() {
     // }
 
     // public int getId() {
