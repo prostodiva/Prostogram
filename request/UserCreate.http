@@ -1,3 +1,6 @@
+POST http://localhost:5432/users
+Content-Type: application/json
+
 {
     "id" : "1",
     "firstName" : "Rita",

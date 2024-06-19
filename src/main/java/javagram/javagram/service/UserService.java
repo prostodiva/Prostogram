@@ -1,8 +1,6 @@
 package javagram.javagram.service;
 import java.util.UUID;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javagram.javagram.exception.UserNotFoundException;
@@ -15,20 +13,19 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class UserService {
+
     private final UserRepository userRepository;
     
     public UserResponse get(UUID uuid) {
         UserEntity entity = userRepository.findById(uuid).orElseThrow(UserNotFoundException::new);
 
         UserResponse response = new UserResponse();
-
         response.setFirstName(entity.getFirstName());
         response.setLastName(entity.getLastName());
         response.setProfileName(entity.getProfileName());
         response.setCreatedAt(entity.getCreatedAt());
         response.setEmail(entity.getEmail());
         response.setPassword(entity.getPassword());
-    
         return response;
     }
 
@@ -65,9 +62,5 @@ public class UserService {
 
     }
 
-    //business logic
-    //create user to save user. inside - call save method from repository
-    // userRepository.save(new User(email, username))
-   //Autowired 
 
 

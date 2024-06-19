@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JavagramApplication<javagram>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "javagram.javagram.web.JavagramApplication",
+            "projectName": "javagram",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
