@@ -1,15 +1,17 @@
-package javagram.javagram.web;
+package javagram.javagram;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class }, scanBasePackages={
 	"com.example.something", "com.example.application"})
-public class JavagramApplication {
+public class Application {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavagramApplication.class, args);
+		SpringApplication.run(Application.class, args);
+
+		
 
 	}
 	

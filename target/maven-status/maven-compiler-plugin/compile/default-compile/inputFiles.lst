@@ -13,10 +13,10 @@
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/model/entity/Post.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/model/DTO/request/UserRequest.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/validation/Age.java
-/Users/evolvers/Prostogram/src/main/java/javagram/javagram/web/JavagramApplication.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/security/SecurityConstants.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/model/entity/Reaction.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/ApplicationExceptionHandler.java
+/Users/evolvers/Prostogram/src/main/java/javagram/javagram/Application.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/model/DTO/response/UserResponse.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/model/entity/Comment.java
 /Users/evolvers/Prostogram/src/main/java/javagram/javagram/validation/UsernameValidator.java

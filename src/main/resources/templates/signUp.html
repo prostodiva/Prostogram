@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" th:href="@{/form-stylesheet.css}">
+</head>
+<body> 
+    <main class="main" role="main"></main>
+          <div class="wrapper">
+          <article class="article">
+          <div class="content">
+                         <img src="images/screenshot4-2x.png"/>
+                         </div>
+        <div class="form">
+        <h2>Prostogram</h2>
+        <form method="post" th:object="${user}" th:action="@{/submitItem}">
+          <input type="text" placeholder="First Name" th:field="*{firstName}">
+          <p style="color: red" th:errors="*{firstName}"> </p>
+          <input type="text" placeholder="Last Name" th:field="*{lastName}">
+          <p style="color: red" th:errors="*{lastName}"> </p>
+          <input type="text" placeholder="Username" th:field="*{userName}">
+          <p style="color: red" th:errors="*{userName}"> </p>
+          <input type="text" placeholder="Email" th:field="*{email}">
+          <p style="color: red" th:errors="*{email}"> </p>
+          <p style="font-weight: bold">Date of Birth</p>
+          <input type="date" th:field="*{dateOfBirth}"> <br><br>
+          <p style="color: red" th:errors="*{dateOfBirth}"> </p>
+          <input type="submit" value="Submit">                
+      </form>
+    </article>
+    <div class="app">
+        <p>Get the app.</p>
+        <div class="app-img">
+          <a href="">
+            <img src="/images/Yfc020c87j0.png">
+          </a>
+          <a href="">
+            <img src="/images/c5Rp7Ym-Klz.png">
+          </a>  
+        </div>
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+          <nav class="footer-nav" role="navigation">
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Support</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Press</a></li>
+              <li><a href="">Api</a></li>
+              <li><a href="">Jobs</a></li>
+              <li><a href="">Privacy</a></li>
+              <li><a href="">Terms</a></li>
+              <li><a href="">Directory</a></li>
+              <li>
+                <span class="language">Language
+                  <select name="language" class="select" onchange="la(this.value)">
+                    <option value="#">English</option>
+                    <option value="http://ru-instafollow.bitballoon.com">Russian</option>
+                    <option value="http://ru-instafollow.bitballoon.com">Spanish</option>
+                  </select>
+                </span>
+              </li>
+            </ul>
+          </nav>
+         
+        </div>  
+     
+          <span class="footer-logo">2023 Prostogram</span>
+ 
+      </footer>
+
+</body> 
+</html>
