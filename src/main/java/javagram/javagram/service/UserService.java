@@ -61,6 +61,12 @@ public class UserService {
 
     }
 
+    public UserResponse delete(UUID uuid, UserEntity entity) {
+        UserResponse response = new UserResponse();
+        userRepository.delete(entity);
+        return response;
+    }
+
 
     }
 
