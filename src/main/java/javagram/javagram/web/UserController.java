@@ -1,15 +1,17 @@
 package javagram.javagram.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javagram.javagram.model.DTO.request.UserRequest;
 import jakarta.validation.Valid;
@@ -17,21 +19,25 @@ import javagram.javagram.service.UserService;
 import lombok.AllArgsConstructor;
 
 import java.util.UUID;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @Controller
 @AllArgsConstructor
 @RequestMapping("/users")
 public class UserController {
 
+    @Autowired
     private final UserService userService;
 
-    //does not work
-    // @GetMapping("/signUp")
-    // public String signUp() {
-    //     return "signUp";       //looking for a html file inside a template folder
-    // }
+    @GetMapping("/users")
+    public RedirectView
+    redirectWithRedirectView() {
+        return new RedirectView("/form");
+    }
+
+    @GetMapping("/form")
+    public ModelAndView targetPage() {
+        return new ModelAndView("form");
+    }
 
     @GetMapping("/users/{uuid}")
     public ResponseEntity<?> get(@PathVariable UUID uuid) {
@@ -43,7 +49,7 @@ public class UserController {
         return ResponseEntity.ok(userService.create(request));
     }
 
-    @PutMapping("/user/{uuid}")
+    @PutMapping("/users/{uuid}")
     public ResponseEntity<?> update(@PathVariable UUID uuid, @Valid @RequestBody UserRequest userRequest) {
         userService.update(uuid, userRequest);
         return new ResponseEntity<>(HttpStatusCode.valueOf(200));

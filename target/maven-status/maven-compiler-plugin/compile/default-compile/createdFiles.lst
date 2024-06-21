@@ -18,6 +18,7 @@ javagram/javagram/security/manager/CustomAuthemtificationManager.class
 javagram/javagram/validation/UsernameValidator.class
 javagram/javagram/model/entity/Follower.class
 javagram/javagram/validation/Age.class
+javagram/javagram/exception/NoResourceFoundExceptionHandler.class
 javagram/javagram/model/DTO/request/UserRequest.class
 javagram/javagram/validation/AgeValidator.class
 javagram/javagram/security/SecurityConfig.class

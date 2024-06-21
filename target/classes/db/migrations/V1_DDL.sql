@@ -3,7 +3,7 @@ id serial primary key,
 first_name varchar(50),
 last_name varchar(50),
 profile_name varchar(50),
-created_at date,
+created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 email varchar(50),
 password varchar(50)
 );
@@ -11,7 +11,7 @@ password varchar(50)
 CREATE TABLE post (
 id serial primary key,
 user_id int references users (id),
-created_date date,
+created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 post_type int references post_type (id)
 );
 
@@ -37,7 +37,7 @@ post_id int references post(id)
 CREATE TABLE comment (
 id serial primary key,
 post_id int references post (id),
-created_date date,
+created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 comment text,
 comment_replied_to_id int references users(id)
 );

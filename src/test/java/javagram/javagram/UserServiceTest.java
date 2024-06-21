@@ -21,17 +21,17 @@ public class UserServiceTest {
     
     
     @Test
-    public void addTest() {
+    public void addUser() {
 
     }
 
     @Test
-    public void updateTest() {
+    public void updateUser() {
 
     }
 
     @Test
-    public void deleteTest() {
+    public void deleteUser() {
 
     }
     
