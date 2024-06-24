@@ -31,15 +31,15 @@ public class UserController {
     @Autowired
     private final UserService userService;
 
-    @GetMapping("/users")
-    public RedirectView redirectWithRedirectView() {
-        return new RedirectView("/form");
-    }
+    // @GetMapping("/users")
+    // public RedirectView redirectWithRedirectView() {
+    //     return new RedirectView("/form");
+    // }
 
-    @GetMapping("/form")
-    public ModelAndView targetPage() {
-        return new ModelAndView("form");
-    }
+    // @GetMapping("/form")
+    // public ModelAndView targetPage() {
+    //     return new ModelAndView("form");
+    // }
 
     @GetMapping("/users/{uuid}")
     public ResponseEntity<?> get(@PathVariable UUID uuid) {
