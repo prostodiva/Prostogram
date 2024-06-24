@@ -1,5 +1,6 @@
 package javagram.javagram.security;
 
+import org.springframework.security.config.Customizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,11 +20,12 @@ public class SecurityConfig {
     private BCryptPasswordEncoder passwordEncoder;
     
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()    //authorize requests
-                .anyRequest().authenticated() //any requests need to be authenticated
-                .and()
-                .httpBasic(); //using basic authentification.
+    http
+    .authorizeHttpRequests((authorizeHttpRequests) ->
+    authorizeHttpRequests
+            .requestMatchers("/admin/**").hasRole("ADMIN")
+            .requestMatchers("/**").hasRole("USER"))
+            .httpBasic(Customizer.withDefaults()); //using basic authentification
 
         return http.build();
     }
