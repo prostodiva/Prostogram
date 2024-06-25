@@ -1,4 +1,5 @@
 package javagram.javagram.service;
+import java.util.ArrayList;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -67,6 +68,11 @@ public class UserService {
         return response;
     }
 
+//     public ArrayList<UserEntity> findAll() {
+//     ArrayList<UserEntity> users = new ArrayList<>();
+//     userRepository.findAll().forEach(users::add);
+//     return users;
+// }
 
     }
 

@@ -41,23 +41,29 @@ public class UserController {
     //     return new ModelAndView("form");
     // }
 
-    @GetMapping("/users/{uuid}")
+    //QUESTION TO TUTOR: 1. How to GET a list of all users from the database. - users table. 
+    // @GetMapping("/")
+    // public ResponseEntity<UserEntity> findAll() {
+    //     return ResponseEntity.ok(userService.findAll());
+    // }
+
+    @GetMapping("/user/{uuid}")
     public ResponseEntity<?> get(@PathVariable UUID uuid) {
         return ResponseEntity.ok(userService.get(uuid));
     }
 
-    @PostMapping("/users")
+    @PostMapping("/user")
     public ResponseEntity<?> create(@Valid @RequestBody UserRequest request) {
         return ResponseEntity.ok(userService.create(request));
     }
 
-    @PutMapping("/users/{uuid}")
+    @PutMapping("/user/{uuid}")
     public ResponseEntity<?> update(@PathVariable UUID uuid, @Valid @RequestBody UserRequest userRequest) {
         userService.update(uuid, userRequest);
         return new ResponseEntity<>(HttpStatusCode.valueOf(200));
     }
 
-    @DeleteMapping("/users/{uuid}")
+    @DeleteMapping("/delete/{uuid}/user")       //the path was changed to match requestMatchers method in securityConfig
     public ResponseEntity<?> deleteStudent(@PathVariable UUID uuid, UserEntity entity) {
         userService.delete(uuid, entity);
         return ResponseEntity.ok(HttpStatus.NO_CONTENT);

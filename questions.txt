@@ -1,0 +1,11 @@
+
+1. How to GET a list of all users from the database. - users table. 
+Controller
+2. Why do we need Request and Response classes?
+3. check all the requests
+4. confusion with requests and with HTML(A Controller cannot read HTML files from templates, reads only from static folder. ModelAndView and RedirectView works incorrectly)
+5. Confusion with .yml and .properties files. 
+app.properties works fine, app.yml - doesn’t work
+6. questions about a security folder
+7. What is my next step with the app
+
